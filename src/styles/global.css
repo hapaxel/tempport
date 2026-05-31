@@ -34,7 +34,8 @@
   :root { font-family: InterVariable, sans-serif; }
 	
 body {
-	font-family: "Atkinson", sans-serif;
+	font-family: Inter, sans-serif;
+	font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 	margin: 0;
 	padding: 0;
 	text-align: left;
