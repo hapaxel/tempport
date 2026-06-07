@@ -5,13 +5,15 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h6><a href="/">{SITE_TITLE}</a></h6>
 		<div class="internal-links">
-			<img src="https://www.cindyliuconcepts.com/logo.webp" width="50%" height="50%">
+			<center>
+			<img src="https://www.cindyliuconcepts.com/logo.webp" width="25%" height="25%">
 			<p>
 			<HeaderLink href="/">portfolio</HeaderLink>
 			<HeaderLink href="/blog">personal work</HeaderLink>
 			<HeaderLink href="/about">about me</HeaderLink>
+			</center>
 		</div>
 		<div class="social-links">
 			<a href="https://bsky.app/profile/cindyliuart.bsky.social" target="_blank">
@@ -43,13 +45,13 @@ import { SITE_TITLE } from '../consts';
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
-	h2 {
+	h6 {
 		margin: 0;
 		font-size: 1em;
 	}
 
-	h2 a,
-	h2 a.active {
+	h6 a,
+	h6 a.active {
 		text-decoration: none;
 	}
 	nav {
