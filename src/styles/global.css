@@ -109,6 +109,10 @@ img {
 	height: auto;
 	border-radius: 8px;
 }
+svg.scaled {
+  	height: 32px
+	width: 32px;
+}
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
