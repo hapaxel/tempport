@@ -264,23 +264,23 @@ Component
 }
 
 .grid-auto-xs {
-  --col-min-width: 8rem;
+  --col-min-width: 12rem;
 }
 
 .grid-auto-sm {
-  --col-min-width: 10rem;
-}
-
-.grid-auto-md {
-  --col-min-width: 15rem;
-}
-
-.grid-auto-lg {
   --col-min-width: 20rem;
 }
 
-.grid-auto-xl {
+.grid-auto-md {
   --col-min-width: 25rem;
+}
+
+.grid-auto-lg {
+  --col-min-width: 30rem;
+}
+
+.grid-auto-xl {
+  --col-min-width: 35rem;
 }
 
 /* -------------------------------- 
