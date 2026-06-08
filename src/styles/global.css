@@ -267,21 +267,42 @@ Component
 .grid-auto-xs {
   --col-min-width: 12rem;
 }
+	.grid-auto-xs li {
+  max-height: 12rem;
+  overflow: hidden;
+}
 
 .grid-auto-sm {
   --col-min-width: 20rem;
+}
+	.grid-auto-sm li {
+  max-height: 20rem;
+  overflow: hidden;
 }
 
 .grid-auto-md {
   --col-min-width: 25rem;
 }
 
+.grid-auto-md li {
+  max-height: 25rem;
+  overflow: hidden;
+}
+
 .grid-auto-lg {
   --col-min-width: 30rem;
+}
+	.grid-auto-lg li {
+  max-height: 30rem;
+  overflow: hidden;
 }
 
 .grid-auto-xl {
   --col-min-width: 35rem;
+}
+	.grid-auto-xl li {
+  max-height: 35rem;
+  overflow: hidden;
 }
 
 /* -------------------------------- 
