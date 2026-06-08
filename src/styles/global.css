@@ -265,18 +265,18 @@ Component
 }
 
 .grid-auto-xs {
-  --col-min-width: 12rem;
+  --col-min-width: 8rem;
 }
 	.grid-auto-xs li {
-  max-height: 12rem;
+  max-height: 8rem;
   overflow: hidden;
 }
 
 .grid-auto-sm {
-  --col-min-width: 20rem;
+  --col-min-width: 15rem;
 }
 	.grid-auto-sm li {
-  max-height: 20rem;
+  max-height: 15rem;
   overflow: hidden;
 }
 
