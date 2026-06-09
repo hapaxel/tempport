@@ -15,7 +15,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 1.5rem;
   padding: 0px;
 }
 
@@ -74,7 +74,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 /* Add a dark background to the active button */
 .btn.active {
-  background-color: #666;
+  background-color: black;
   color: white;
   border: 2px solid var(--color-contrast-higher);
 }
@@ -125,57 +125,57 @@ document.addEventListener('DOMContentLoaded', function() {
 <main>
 
 <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
-  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
-  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
-  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+  <button class="btn active" onclick="filterSelection('all')">Show All</button>
+  <button class="btn" onclick="filterSelection('enviro')">Environment</button>
+  <button class="btn" onclick="filterSelection('char')">Character</button>
+  <button class="btn" onclick="filterSelection('creature')">Creature</button>
+  <button class="btn" onclick="filterSelection('visdev')"> Vis Dev</button>
 </div>
 
 <div class="gallery-container">
-  <div class="gallery-item cars">
-    <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
-      <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Cinque Terre">
+  <div class="gallery-item enviro char">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/thePathessDigAlbum_fin-protected-intensity-LOW-V2.png">
+      <img src="https://www.cindyliuconcepts.com/thePathessDigAlbum_fin-protected-intensity-LOW-V2.png" alt="Pathless Digital OST">
     </a>
   </div>
 
-  <div class="gallery-item cars">
-    <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
-      <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Forest">
+  <div class="gallery-item char creature">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/napolean_poster-protected-intensity-LOW-V2.png">
+      <img src="https://www.cindyliuconcepts.com/napolean_poster-protected-intensity-LOW-V2.png" alt="Napolean Dolphin Poster">
     </a>
   </div>
 
-  <div class="gallery-item cars colors">
-    <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
-      <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Northern Lights">
+  <div class="gallery-item creature">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/image-asset-protected-intensity-LOW-V2.png">
+      <img src="https://www.cindyliuconcepts.com/image-asset-protected-intensity-LOW-V2.png" alt="Bog Chicken">
     </a>
   </div>
 
-  <div class="gallery-item fruits">
-    <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
-      <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Mountains">
+  <div class="gallery-item creature enviro">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/karkadannil5_o_2000-protected-intensity-LOW-V2.png">
+      <img src="https://www.cindyliuconcepts.com/karkadannil5_o_2000-protected-intensity-LOW-V2.png" alt="Karkadann">
     </a>
   </div>
 
-  <div class="gallery-item animals cars">
-    <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
-      <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Cinque Terre">
+  <div class="gallery-item creature char">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/tumblr_n1nam7DqB71tuubd4o1_1280_2000-protected-intensity-LOW-V2.png">
+      <img src="https://www.cindyliuconcepts.com/tumblr_n1nam7DqB71tuubd4o1_1280_2000-protected-intensity-LOW-V2.png" alt="crow">
     </a>
   </div>
 
-  <div class="gallery-item cars fruits">
-    <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
-      <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Forest">
+  <div class="gallery-item enviro creature char">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/cindy-liu-void-death-1-protected-intensity-LOW-V2.png">
+      <img src="https://www.cindyliuconcepts.com/cindy-liu-void-death-1-protected-intensity-LOW-V2.png" alt="Death">
     </a>
   </div>
 
-  <div class="gallery-item colors">
-    <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
-      <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Northern Lights">
+  <div class="gallery-item visdev">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/INDIVISIBLE_CLIU_Ashwat_HutA-protected-intensity-LOW-V2.png">
+      <img src="https://www.cindyliuconcepts.com/INDIVISIBLE_CLIU_Ashwat_HutA-protected-intensity-LOW-V2.png" alt="Ashwat">
     </a>
   </div>
 
-  <div class="gallery-item fruits">
+  <div class="gallery-item creature">
     <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
       <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Mountains">
     </a>
