@@ -20,12 +20,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 .gallery-item {
-  border: 0px ;
+  border: 0px;
   overflow: hidden;
+  display: none; /* Hidden by default */
+}
+
+.gallery-item.show {
+  display: block; /* Show when filtered */
 }
 
 .gallery-item:hover {
-  border: 0px ;
+  border: 0px;
   opacity: 0.7;
 }
 
@@ -48,58 +53,125 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     grid-template-columns: 1fr;
   }
 }
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  margin: 5px 2px;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initial load - show all items
+  filterSelection("all");
+  
+  function filterSelection(c) {
+    var x = document.getElementsByClassName("gallery-item");
+    if (c == "all") c = "";
+    
+    for (var i = 0; i < x.length; i++) {
+      if (c == "" || x[i].className.indexOf(c) > -1) {
+        x[i].classList.add("show");
+      } else {
+        x[i].classList.remove("show");
+      }
+    }
+  }
+
+  // Add click event listeners to buttons
+  var btns = document.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      // Remove active class from all buttons
+      var current = document.getElementsByClassName("active");
+      if (current.length > 0) {
+        current[0].classList.remove("active");
+      }
+      // Add active class to clicked button
+      this.classList.add("active");
+      
+      // Get filter value from onclick attribute
+      var onclickAttr = this.getAttribute("onclick");
+      var filterValue = onclickAttr.match(/'([^']*)'/)[1];
+      filterSelection(filterValue);
+    });
+  }
+});
+</script>
 
 </head>
 <body>
 <Header />
 <main>
 
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+</div>
+
 <div class="gallery-container">
-  <div class="gallery-item">
+  <div class="gallery-item cars">
     <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
       <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Cinque Terre">
     </a>
   </div>
 
-  <div class="gallery-item">
+  <div class="gallery-item cars">
     <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
       <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Forest">
     </a>
   </div>
 
-  <div class="gallery-item">
+  <div class="gallery-item cars colors">
     <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
       <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Northern Lights">
     </a>
   </div>
 
-  <div class="gallery-item">
+  <div class="gallery-item fruits">
     <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
       <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Mountains">
     </a>
   </div>
 
-  <div class="gallery-item">
+  <div class="gallery-item animals cars">
     <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
       <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Cinque Terre">
     </a>
   </div>
 
-  <div class="gallery-item">
+  <div class="gallery-item cars fruits">
     <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
       <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Forest">
     </a>
   </div>
 
-  <div class="gallery-item">
+  <div class="gallery-item colors">
     <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
       <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Northern Lights">
     </a>
   </div>
 
-  <div class="gallery-item">
+  <div class="gallery-item fruits">
     <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
       <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Mountains">
     </a>
