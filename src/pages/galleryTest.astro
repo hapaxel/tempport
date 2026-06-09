@@ -15,8 +15,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  padding: 20px;
+  gap: 10px;
+  padding: 0px;
 }
 
 .gallery-item {
@@ -26,6 +26,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 .gallery-item:hover {
   border: 0px ;
+  opacity: 0.7;
 }
 
 .gallery-item img {
@@ -35,11 +36,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   display: block;
 }
 
-.desc {
-  padding: 15px;
-  text-align: center;
-  background: #f9f9f9;
-}
 
 @media only screen and (max-width: 900px) {
   .gallery-container {
@@ -84,7 +80,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
       <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Mountains">
     </a>
-    <div class="desc">Add a description of the image here</div>
   </div>
 
   <div class="gallery-item">
@@ -103,7 +98,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <a target="_blank" href="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg">
       <img src="/F6bzKbhbQAApYIX-protected-intensity-LOW-V2.jpg" alt="Northern Lights">
     </a>
-    <div class="desc">Add a description of the image here</div>
   </div>
 
   <div class="gallery-item">
