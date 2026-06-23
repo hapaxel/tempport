@@ -83,7 +83,7 @@ b {
 	font-weight: 700;
 }
 a {
-	color: var(--accent);
+	color: var(--accent-dark);
 }
 a:hover {
 	color: var(--accent);
@@ -237,9 +237,6 @@ textarea {
   vertical-align: top;
 }
 
-a {
-  color: hsl(250, 84%, 54%);
-}
 
 table {
   border-collapse: collapse;
