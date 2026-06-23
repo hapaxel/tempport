@@ -22,7 +22,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   margin: 10px;
   padding: 10px;
   text-align: center;  
-  font-size: 18px;
+  
 }
 
 a.bt:link, a.bt:visited {
@@ -34,6 +34,7 @@ a.bt:link, a.bt:visited {
   text-transform: uppercase;
   display: inline-block;
   border: 2px solid black;
+  font-size: 18px;
 }
 
 a.bt:hover, a.bt:active {
@@ -49,11 +50,11 @@ a.bt:hover, a.bt:active {
 <main>
 
 	<p align="center">
-		<img src="/bio.png" alt="ME!" style="border-radius: 50%;">
-	</p>
-	<p>
-		Cindy is a freelance Concept Artist, Illustrator, and Skull Enthusiast! Currently working out of Los Angeles, CA. She studied traditionally at the Academy of Art University of San Francisco and have worked in gamedev since 2012. She has worked with teams of various sizes and scopes in projects. 
-	</p>
+<div class="container=>
+		<div style="width: 100%; flex-grow: 1;"><img src="/bio.png" alt="ME!" style="border-radius: 50%;">
+	</div>
+		<div style="width: 100%; flex-grow: 2; text-align: left;">Cindy is a freelance Concept Artist, Illustrator, and Skull Enthusiast! Currently working out of Los Angeles, CA. She studied traditionally at the Academy of Art University of San Francisco and have worked in gamedev since 2012. She has worked with teams of various sizes and scopes in projects. 
+	</div></p>
 
 	<p>
 	<div class="container">
