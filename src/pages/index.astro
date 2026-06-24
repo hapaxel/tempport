@@ -14,9 +14,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <style>
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: auto auto auto;
   gap: 1.5rem;
   padding: 0px;
+  height: auto;
+  width: 100%;
 }
 
 .gallery-item {
@@ -37,7 +39,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 
@@ -81,6 +83,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 .btnContainer {
   display: flex;
+  width: 100%;
   flex-flow: row wrap;
 }
 
