@@ -37,7 +37,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 .gallery-item img {
   width: 100%;
   height: 350px;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <Header />
 <main>
 
-<div id="myBtnContainer">
+<div id="myBtnContainer" class="container">
   <button class="btn active" onclick="filterSelection('all')">Show All</button>
   <button class="btn" onclick="filterSelection('enviro')">Environment</button>
   <button class="btn" onclick="filterSelection('char')">Character</button>
