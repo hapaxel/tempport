@@ -14,7 +14,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <style>
 .gallery-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   gap: 1.5rem;
   padding: 0px;
   height: auto;
@@ -83,12 +83,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 .btnContainer {
   display: flex;
+  justify-content: flex-start;
   width: 100%;
   flex-flow: row wrap;
 }
 
 .btnContainer div {
-  width: 100%;
+  width: auto;
 }
 
 </style>
