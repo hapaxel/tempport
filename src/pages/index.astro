@@ -14,8 +14,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <style>
 .gallery-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 1.5rem;
+  grid-template-columns: auto auto auto;
+  gap: .75rem;
   padding: 0px;
   height: auto;
   width: 100%;
@@ -70,13 +70,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 /* Add a light grey background on mouse-over */
 .btn:hover {
-  background-color: black;
+  background-color:--accent;
   color: white;
 }
 
 /* Add a dark background to the active button */
 .btn.active {
-  background-color: var(--accent);
+  background-color: var( black);
   color: white;
   border: 0px solid var(--color-contrast-higher);
 }
@@ -85,7 +85,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 100%;
   flex-flow: row wrap;
 }
 
@@ -142,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div><button class="btn" onclick="filterSelection('creature')">Creature</button></div>
   <div><button class="btn" onclick="filterSelection('visdev')"> Vis Dev</button></div>
 </div>
-<p>
+<p></p>
 <div class="gallery-container">
   <div class="gallery-item enviro char">
     <a target="_blank" href="https://www.cindyliuconcepts.com/thePathessDigAlbum_fin-protected-intensity-LOW-V2.png">
