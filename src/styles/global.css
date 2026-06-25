@@ -526,3 +526,21 @@ width: 100%;
   justify-content: flex-start;
   flex-flow: row wrap;
 }
+
+a.bt:link, a.bt:visited {
+  background-color: #ffffff;
+  color: black;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  display: inline-block;
+  border: 2px solid black;
+  font-size: 11px;
+}
+
+a.bt:hover, a.bt:active {
+  background-color: black;
+  color: white;
+}
