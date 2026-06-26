@@ -81,12 +81,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 @media screen and (max-width: 600px) {
-  .wt-nav a:not(:first-child), .dropdown .dropbtn {
+  .wt-nav a:not(.icon):not(:first-child) {
     display: none;
   }
   .wt-nav a.icon {
     float: right;
     display: block;
+  }
+  .wt-nav.responsive a:not(.icon) {
+    display: block;
+  }
+  .wt-nav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
   }
 }
 
