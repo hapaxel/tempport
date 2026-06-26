@@ -62,6 +62,7 @@ import { SITE_TITLE } from '../consts';
   		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
+		position: relative;
 	}
 	nav a {
 		padding: 0.5em 0.5em;
@@ -77,6 +78,10 @@ import { SITE_TITLE } from '../consts';
 	@media screen and (max-width: 720px) {
   		.container, .internal-links {   
     		flex-direction: column;
+			position: relative;
+    		top: 0;
+    		left: 0;
+    		transform: none;
   		}
 	}
 
