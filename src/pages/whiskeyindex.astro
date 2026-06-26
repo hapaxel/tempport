@@ -12,102 +12,53 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	
 
 <style>
-.wt-nav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.wt-nav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-
-.wt-nav .icon {
-  display: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 17px;    
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
+.sidebar {
   margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+.sidebar a {
   display: block;
-  text-align: left;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
 }
 
-.wt-nav a:hover, .dropdown:hover .dropbtn {
+.sidebar a:hover:not(.active) {
   background-color: #555;
   color: white;
 }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-@media screen and (max-width: 600px) {
-  .wt-nav a:not(:first-child), .dropdown .dropbtn {
-    display: none;
-  }
-  .wt-nav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .wt-nav.responsive {position: relative;}
-  .wt-nav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .wt-nav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .wt-nav.responsive .dropdown {float: none;}
-  .wt-nav.responsive .dropdown-content {position: relative;}
-  .wt-nav.responsive .dropdown .dropbtn {
-    display: block;
+@media screen and (max-width: 700px) {
+  .sidebar {
     width: 100%;
-    text-align: left;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
   }
 }
 
@@ -115,37 +66,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <script>
 
-function myFunction() {
-  var x = document.getElementById("WTnav");
-  if (x.className === "wt-nav") {
-    x.className += " responsive";
-  } else {
-    x.className = "wt-nav";
-  }
-}
-
 </script>
 
 
 </head>
 
 <body>
-<div class="wt-nav" id="WTnav">
-  <a href="#home" class="active">Home</a>
+
+<div class="sidebar">
+  <a class="active" href="#home">Home</a>
   <a href="#news">News</a>
   <a href="#contact">Contact</a>
-  <div class="dropdown">
-    <button class="dropbtn">Dropdown 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </div> 
   <a href="#about">About</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 
 <main>
