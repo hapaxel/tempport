@@ -1,0 +1,100 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	
+
+<style>
+.wh_layout {  display: grid;
+  grid-template-columns: 0.4fr 2.2fr 0.4fr;
+  grid-template-rows: 0.2fr 0.5fr 2.2fr 0.4fr 2.3fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". wh_header ."
+    ". wh_intro ."
+    "wh_navbar wh_navbar wh_navbar"
+    ". wh_body ."
+    ". wh_footer .";
+}
+
+.wh_header {
+  justify-self: center;
+  align-self: center;
+  grid-area: wh_header;
+}
+
+.wh_intro {
+  justify-self: center;
+  grid-area: wh_intro;
+}
+
+.wh_navbar {  display: grid;
+  grid-template-columns: 0.4fr 2.2fr 0.4fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". wh_navlinks .";
+  grid-area: wh_navbar;
+}
+
+.wh_navlinks {
+  justify-self: center;
+  grid-area: wh_navlinks;
+}
+
+.wh_body {
+  grid-area: wh_body;
+  width: 100%;
+}
+
+.wh_footer {
+  justify-self: center;
+  grid-area: wh_footer;
+  width: 100%;
+}
+
+
+</style>
+
+<script>
+
+</script>
+
+
+</head>
+
+<body>
+
+<div class="wh_layout">
+  <div class="wh_header">WHISKEYTEETH</div>
+  <div class="wh_intro">
+    <p align="center">Work I have done under the pseudonym WhiskeyTeeth. I was from the batch of artist that was told fanart and anime style works are bad. I ran into burnout and so far this kind of silly work was what I need to enjoy drawing again.
+    </p>
+    </p align="center">Draw what makes you happy. 🖤</p>
+  </div>
+  <div class="wh_navbar">
+    <div class="wh_navlinks">back to portfolio | gallery | fancomics | shop | links </div>
+  </div>
+  <div class="wh_body">gallery</div>
+  <div class="wh_footer">twitter | bluesky</div>
+</div>
+
+<main>
+
+<h3><p align="center">WORK IN PROGRESS</p></h3>
+
+
+</main>
+		<Footer />
+	</body>
+</html>
