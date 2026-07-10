@@ -5,12 +5,12 @@ import BaseHead from '../components/BaseHead.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	
-
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
   box-sizing: border-box;
@@ -26,19 +26,27 @@ body {
 .header {
   padding: 80px;
   text-align: center;
-  background: #1abc9c;
+  background: #E98B77;
+   background: -moz-linear-gradient(top, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
+	background: -webkit-linear-gradient(top, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
+	background: linear-gradient(to bottom, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
   color: white;
 }
 
 /* Increase the font size of the heading */
 .header h1 {
   font-size: 40px;
+  text-shadow: 3px 3px 0px #00b685, 5px 5px 0px #00b685;
+}
+
+h2, h3 {
+  color: #00b685;
 }
 
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: #e98b77;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -62,13 +70,13 @@ body {
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: white;
+  color: #e98b77;
 }
 
 /* Active/current link */
 .navbar a.active {
-  background-color: #666;
+  background-color: #37383f;
   color: white;
 }
 
@@ -85,7 +93,7 @@ body {
 .side {
   -ms-flex: 30%; /* IE10 */
   flex: 30%;
-  background-color: #f1f1f1;
+  background-color: #F8EDED;
   padding: 20px;
 }
 
@@ -130,28 +138,40 @@ body {
 <body>
 
 <div class="header">
-  <h1>My Website</h1>
-  <p>A <b>responsive</b> website created by me.</p>
+  <h1>WHISKEYTEETH</h1>
+  <p>A <b>pseudonym</b> for my fan works.</p>
 </div>
 
 <div class="navbar">
-  <a href="#" class="active">Home</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#" class="right">Link</a>
+  <a href="#" class="active">news</a>
+  <a href="#">fanart</a>
+  <a href="#">fancomics</a>
+  <a href="#">store</a>
+  <a href="#">links</a>
+  <a href="#" class="right">x</a>
+  <a href="#" class="right">x</a>
 </div>
 
 <div class="row">
   <div class="side">
-    <h2>About Me</h2>
-    <h5>Photo of me:</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
+    <p> I was from the batch of artist that was told fanart and anime style works are bad. I ran into burnout and so far this kind of silly work was what I need to enjoy drawing again.</p>
+
+	<p>Draw what makes you happy. 🖤</p>
+    <h3>Current Fandoms and Ships</h3>
+    <p>
+MHA, One Piece, Golden Kamuy, Yakuza, Resident Evil</p>
+
+<p>Main ships: Kacchako, Aeon, Crocbug?</p>
+  <h3>Published Zine Projects
+Kacchako-</h3>
+    <p>All Roads Lead to You</p>
+
+  <p>Kacchako Advent 2023</p>
+
+<h3>About me + Commission info-</h3>
+    <p>Game dev by day, sweaty weeb by night. Professional work can be found here, I am most active on Twitter.</p>
+
+  <p>Commission Status: CLOSED</p>
   </div>
   <div class="main">
     <h2>TITLE HEADING</h2>
@@ -167,6 +187,18 @@ body {
     <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
   </div>
 </div>
+<div align="center">
+	<h2>gallery</h2>
+    <div class="fakeimg" style="height:200px;">Image</div><br>
+    <div class="fakeimg" style="height:200px;">Image</div><br>
+    <div class="fakeimg" style="height:200px;">Image</div><br>
+    <div class="fakeimg" style="height:200px;">Image</div><br>
+    <div class="fakeimg" style="height:200px;">Image</div><br>
+    <div class="fakeimg" style="height:200px;">Image</div><br>
+    <div class="fakeimg" style="height:200px;">Image</div><br>
+    <div class="fakeimg" style="height:200px;">Image</div><br>
+    <div class="fakeimg" style="height:200px;">Image</div><br>
+    </div>
 
 <div class="footer">
   <h2>Footer</h2>
