@@ -13,8 +13,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <style>
 .wh_layout {  display: grid;
-  grid-template-columns: 0.4fr 2.2fr 0.4fr;
-  grid-template-rows: 0.2fr 0.5fr 2.2fr 0.4fr 2.3fr 0.4fr;
+  grid-template-columns: auto 75% auto;
+  grid-template-rows: 2em max-content max-content 4em auto max-content;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -24,7 +24,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     "wh_navbar wh_navbar wh_navbar"
     ". wh_body ."
     ". wh_footer .";
-	width: 100%; 
+  width: 100%;
 }
 
 .wh_header {
@@ -39,12 +39,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 .wh_navbar {  display: grid;
-  grid-template-columns: 0.4fr 2.2fr 0.4fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: auto 75% auto;
+  grid-template-rows: 4em;
   gap: 0px 0px;
   grid-auto-flow: row;
+  justify-content: stretch;
+  align-content: center;
+  justify-items: stretch;
+  align-items: stretch;
   grid-template-areas:
     ". wh_navlinks .";
+  align-self: stretch;
   grid-area: wh_navbar;
 }
 
