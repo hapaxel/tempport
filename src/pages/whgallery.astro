@@ -144,42 +144,6 @@ h2, h3, h4 {
   }
   
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: center;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
 
 
 /* Footer */
@@ -229,7 +193,45 @@ h2, h3, h4 {
 
 </style>
 
+<script>
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Initial load - show all items
+  filterSelection("all");
+  
+  function filterSelection(c) {
+    var x = document.getElementsByClassName("gallery-item");
+    if (c == "all") c = "";
+    
+    for (var i = 0; i < x.length; i++) {
+      if (c == "" || x[i].className.indexOf(c) > -1) {
+        x[i].classList.add("show");
+      } else {
+        x[i].classList.remove("show");
+      }
+    }
+  }
+
+  // Add click event listeners to buttons
+  var btns = document.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      // Remove active class from all buttons
+      var current = document.getElementsByClassName("active");
+      if (current.length > 0) {
+        current[0].classList.remove("active");
+      }
+      // Add active class to clicked button
+      this.classList.add("active");
+      
+      // Get filter value from onclick attribute
+      var onclickAttr = this.getAttribute("onclick");
+      var filterValue = onclickAttr.match(/'([^']*)'/)[1];
+      filterSelection(filterValue);
+    });
+  }
+});
+</script>
 
 </head>
 
@@ -289,54 +291,60 @@ h2, h3, h4 {
 </div>
 
 
-<div align="center">
 <div class="header">
 	<h1><a name="gallery"></a>GALLERY</h1>
 </div>    
 
+<div id="myBtnContainer" class="btnContainer container">
+  <div><button class="btn active" onclick="filterSelection('all')">Show All</button></div>
+  <div><button class="btn" onclick="filterSelection('enviro')">temp</button></div>
+  <div><button class="btn" onclick="filterSelection('char')">temp</button></div>
+  <div><button class="btn" onclick="filterSelection('creature')">temp</button></div>
+  <div><button class="btn" onclick="filterSelection('visdev')">tempv</button></div>
+</div>
+<p></p>
+<div class="gallery-container">
 
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  <div class="gallery-item creature">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" style="object-position: 20% 100%;" alt="Bog Chicken">
+    </a>
+  </div>
+
+  <div class="gallery-item enviro char">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Pathless Digital OST">
+    </a>
+  </div>
+
+  <div class="gallery-item char creature">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Napolean Dolphin Poster">
+    </a>
+  </div>
+
+  <div class="gallery-item enviro visdev">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Grotto">
+    </a>
+   </div>
+
+ <div class="gallery-item enviro visdev">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Woodsman Home">
+    </a>
+  </div>
+
+  <div class="gallery-item enviro visdev">
+    <a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpgg">
+      <img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Logging Grounds">
+    </a>
+  </div>
+
+
 </div>
 
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-<script>
-
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
-</script>
 </div>
 
 <div class="footer">
