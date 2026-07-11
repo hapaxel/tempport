@@ -20,6 +20,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 /* Header/logo Title */
 .header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 80px;
   text-align: center;
   background: #E98B77;
@@ -27,6 +30,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	background: -webkit-linear-gradient(top, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
 	background: linear-gradient(to bottom, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
   color: white;
+  font-size: 12px;
 }
 
 /* Increase the font size of the heading */
@@ -36,7 +40,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   text-shadow: 3px 3px 0px #00b685, 5px 5px 0px #00b685;
 }
 
-h2, h3 {
+h2, h3, h4 {
   color: #00b685;
 }
 
@@ -122,12 +126,16 @@ h2, h3 {
   }
   
   .card_content {
-  padding: 1rem;
+  padding: 2rem;
   font-size: 13px;
   
   }
 
-
+  .card_content h4 {
+  margin-left: -1rem;
+  padding-top: .5rem;
+  
+  }
 
   .card_image {
   max-height: 250px; 
@@ -168,7 +176,9 @@ h2, h3 {
 
 <div class="header">
   <h1>WHISKEYTEETH</h1>
-  <p>A <b>pseudonym</b> for my fan works.</p>
+  <div style="max-width: 500px;"><p>A <b>pseudonym</b> for my fan works. I was from the batch of artist that was told fanart and anime style works are bad. I ran into burnout and so far this kind of silly work was what I need to enjoy drawing again.</p>
+  <p>Draw what makes you happy. 🖤</p>
+  </div>
 </div>
 
 <div class="navbar">
@@ -183,25 +193,21 @@ h2, h3 {
 <div class="row">
   <div class="side">
   	<div class="card">
-        <div class="card_image"><img src="https://assets.codepen.io/652/photo-1468777675496-5782faaea55b.jpeg"></div>
+        <div class="card_image"><img src="https://cindyliuconcepts.com/bio.png" style="border-radius: 50%"></div>
         <div class="card_content">
-          <h3>Whomst?</h3>
-            <p> I was from the batch of artist that was told fanart and anime style works are bad. I ran into burnout and so far this kind of silly work was what I need to enjoy drawing again.</p>
-            <p>Draw what makes you happy. 🖤</p>
-            <h3>Current Fandoms and Ships</h3>
+        	<h4>About me</h4>
+    		<p>Game dev by day, sweaty weeb by night. Professional work can be found here, I am most active on Twitter.</p>
+            <h4>Current Fandoms and Ships</h4>
    			<p>MHA, One Piece, Golden Kamuy, Yakuza, Resident Evil</p>
 
 			<p>Main ships: Kacchako, Aeon, Crocbug?</p>
-  			<h3>Published Zine Projects</h3>
+  			<h4>Published Zine Projects</h4>
             <p>Kacchako-</p>
     		<ul>
               <li>All Roads Lead to You</li>
   			  <li>Kacchako Advent 2023</li>
 			</ul>
-         
-			<h3>About me + Commission info-</h3>
-    		<p>Game dev by day, sweaty weeb by night. Professional work can be found here, I am most active on Twitter.</p>
-
+			<p></p>
   			<h4>Commission Status: CLOSED</h4>
         </div>
  	 </div>
