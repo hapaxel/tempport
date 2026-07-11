@@ -18,12 +18,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   box-sizing: border-box;
 }
 
-/* Header/logo Title */
 .header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 80px;
+  padding: 40px;
   text-align: center;
   background: #E98B77;
    background: -moz-linear-gradient(top, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
@@ -38,6 +37,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   font-size: 40px;
   color: white;
   text-shadow: 3px 3px 0px #00b685, 5px 5px 0px #00b685;
+  margin: 30px;
 }
 
 h2, h3, h4 {
@@ -93,16 +93,16 @@ h2, h3, h4 {
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
   background-color: white;
   padding: 20px;
 }
 
 /* Main column */
 .main {   
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
   background-color: white;
   padding: 20px;
 }
@@ -153,6 +153,28 @@ h2, h3, h4 {
   background: #ddd;
 }
 
+@media screen and (max-width: 1024px) {
+  .side {
+     -ms-flex: 40%; /* IE10 */
+    flex: 40%;
+    }
+  .main {   
+    -ms-flex: 60%; /* IE10 */
+    flex: 60%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+  .side {
+     -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    }
+  .main {   
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    }
+}
+
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .row {   
@@ -166,9 +188,50 @@ h2, h3, h4 {
     float: none;
     width: 100%;
   }  
- 
 }
+  
+
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initial load - show all items
+  filterSelection("all");
+  
+  function filterSelection(c) {
+    var x = document.getElementsByClassName("gallery-item");
+    if (c == "all") c = "";
+    
+    for (var i = 0; i < x.length; i++) {
+      if (c == "" || x[i].className.indexOf(c) > -1) {
+        x[i].classList.add("show");
+      } else {
+        x[i].classList.remove("show");
+      }
+    }
+  }
+
+  // Add click event listeners to buttons
+  var btns = document.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      // Remove active class from all buttons
+      var current = document.getElementsByClassName("active");
+      if (current.length > 0) {
+        current[0].classList.remove("active");
+      }
+      // Add active class to clicked button
+      this.classList.add("active");
+      
+      // Get filter value from onclick attribute
+      var onclickAttr = this.getAttribute("onclick");
+      var filterValue = onclickAttr.match(/'([^']*)'/)[1];
+      filterSelection(filterValue);
+    });
+  }
+});
+</script>
+
 
 </head>
 
@@ -203,7 +266,7 @@ h2, h3, h4 {
 			<p>Main ships: Kacchako, Aeon, Crocbug?</p>
   			<h4>Published Zine Projects</h4>
             <p>Kacchako-</p>
-    		<ul>
+    		<ul style="list-style-type: square; list-style-position: inside;">
               <li>All Roads Lead to You</li>
   			  <li>Kacchako Advent 2023</li>
 			</ul>
@@ -226,18 +289,61 @@ h2, h3, h4 {
     <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
   </div>
 </div>
+
+
 <div align="center">
-	<h2><a name="gallery"></a>GALLERY</h2>
-    <div class="fakeimg" style="height:200px;">Image</div><br>
-    <div class="fakeimg" style="height:200px;">Image</div><br>
-    <div class="fakeimg" style="height:200px;">Image</div><br>
-    <div class="fakeimg" style="height:200px;">Image</div><br>
-    <div class="fakeimg" style="height:200px;">Image</div><br>
-    <div class="fakeimg" style="height:200px;">Image</div><br>
-    <div class="fakeimg" style="height:200px;">Image</div><br>
-    <div class="fakeimg" style="height:200px;">Image</div><br>
-    <div class="fakeimg" style="height:200px;">Image</div><br>
+	<div class="header">
+		<h1><a name="gallery"></a>GALLERY</h1>
     </div>
+    
+    <div id="myBtnContainer" class="btnContainer container">
+  		<div><button class="btn active" onclick="filterSelection('all')">Show All</button></div>
+  		<div><button class="btn" onclick="filterSelection('enviro')">temp</button></div>
+  		<div><button class="btn" onclick="filterSelection('char')">temp</button></div>
+  		<div><button class="btn" onclick="filterSelection('creature')">temp</button></div>
+  		<div><button class="btn" onclick="filterSelection('visdev')">tempv</button></div>
+	</div>
+    
+	<div class="gallery-container">
+  		<div class="gallery-item creature">
+    		<a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      		<img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" style="object-position: 20% 100%;" alt="Bog Chicken">
+    		</a>
+  		</div>
+
+  		<div class="gallery-item enviro char">
+    		<a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      		<img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Pathless Digital OST">
+    		</a>
+  		</div>
+
+  		<div class="gallery-item char creature">
+    		<a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      		<img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Napolean Dolphin Poster">
+    		</a>
+  		</div>
+
+  		<div class="gallery-item enviro visdev">
+    		<a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      		<img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Grotto">
+    		</a>
+   		</div>
+
+ 		<div class="gallery-item enviro visdev">
+    		<a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg">
+      		<img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Woodsman Home">
+    		</a>
+  		</div>
+
+  		<div class="gallery-item enviro visdev">
+    		<a target="_blank" href="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpgg">
+      		<img src="https://www.cindyliuconcepts.com/E-3V_ZmVUAU8gz9-protected-intensity-LOW-V2.jpg" alt="Logging Grounds">
+    		</a>
+  		</div>
+
+
+	</div>
+</div>
 
 <div class="footer">
   <h2>Footer</h2>
