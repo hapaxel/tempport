@@ -1,4 +1,62 @@
-    <div id="myBtnContainer" class="btnContainer container">
+---
+import BaseHead from '../components/BaseHead.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	
+
+<style>
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initial load - show all items
+  filterSelection("all");
+  
+  function filterSelection(c) {
+    var x = document.getElementsByClassName("gallery-item");
+    if (c == "all") c = "";
+    
+    for (var i = 0; i < x.length; i++) {
+      if (c == "" || x[i].className.indexOf(c) > -1) {
+        x[i].classList.add("show");
+      } else {
+        x[i].classList.remove("show");
+      }
+    }
+  }
+
+  // Add click event listeners to buttons
+  var btns = document.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      // Remove active class from all buttons
+      var current = document.getElementsByClassName("active");
+      if (current.length > 0) {
+        current[0].classList.remove("active");
+      }
+      // Add active class to clicked button
+      this.classList.add("active");
+      
+      // Get filter value from onclick attribute
+      var onclickAttr = this.getAttribute("onclick");
+      var filterValue = onclickAttr.match(/'([^']*)'/)[1];
+      filterSelection(filterValue);
+    });
+  }
+});
+</script>
+	</head>
+
+<body>
+
+<div id="myBtnContainer" class="btnContainer container">
   		<div><button class="btn active" onclick="filterSelection('all')">Show All</button></div>
   		<div><button class="btn" onclick="filterSelection('enviro')">temp</button></div>
   		<div><button class="btn" onclick="filterSelection('char')">temp</button></div>
@@ -46,3 +104,5 @@
 
 	</div>
 </div>
+</body>
+</html>
