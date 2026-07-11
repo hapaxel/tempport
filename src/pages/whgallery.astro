@@ -16,12 +16,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   box-sizing: border-box;
 }
 
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
 /* Header/logo Title */
 .header {
   padding: 80px;
@@ -50,6 +44,7 @@ h2, h3 {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
+  z-index: 1;
 }
 
 /* Style the navigation bar links */
@@ -84,8 +79,8 @@ h2, h3 {
 .row {  
   display: -ms-flexbox; /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
+  -ms-flex-wrap: nowrap; /* IE10 */
+  flex-wrap: nowrap;
 }
 
 /* Create two unequal columns that sits next to each other */
@@ -93,7 +88,7 @@ h2, h3 {
 .side {
   -ms-flex: 30%; /* IE10 */
   flex: 30%;
-  background-color: #F8EDED;
+  background-color: white;
   padding: 20px;
 }
 
@@ -111,6 +106,34 @@ h2, h3 {
   width: 100%;
   padding: 20px;
 }
+
+
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  }
+  
+  .card_content {
+  padding: 1rem;
+  font-size: 13px;
+  
+  }
+
+
+
+  .card_image {
+  max-height: 250px; 
+  align-self: center;
+  }
+
+
+
+
 
 /* Footer */
 .footer {
@@ -131,7 +154,8 @@ h2, h3 {
   .navbar a {
     float: none;
     width: 100%;
-  }
+  }  
+ 
 }
 </style>
 </head>
@@ -144,8 +168,7 @@ h2, h3 {
 
 <div class="navbar">
   <a href="#" class="active">news</a>
-  <a href="#">fanart</a>
-  <a href="#">fancomics</a>
+  <a href="#gallery">gallery</a>
   <a href="#">store</a>
   <a href="#">links</a>
   <a href="#" class="right">x</a>
@@ -154,25 +177,30 @@ h2, h3 {
 
 <div class="row">
   <div class="side">
-    <p> I was from the batch of artist that was told fanart and anime style works are bad. I ran into burnout and so far this kind of silly work was what I need to enjoy drawing again.</p>
+  	<div class="card">
+        <div class="card_image"><img src="https://assets.codepen.io/652/photo-1468777675496-5782faaea55b.jpeg"></div>
+        <div class="card_content">
+          <h3>Whomst?</h3>
+            <p> I was from the batch of artist that was told fanart and anime style works are bad. I ran into burnout and so far this kind of silly work was what I need to enjoy drawing again.</p>
+            <p>Draw what makes you happy. 🖤</p>
+            <h3>Current Fandoms and Ships</h3>
+   			<p>MHA, One Piece, Golden Kamuy, Yakuza, Resident Evil</p>
 
-	<p>Draw what makes you happy. 🖤</p>
-    <h3>Current Fandoms and Ships</h3>
-    <p>
-MHA, One Piece, Golden Kamuy, Yakuza, Resident Evil</p>
+			<p>Main ships: Kacchako, Aeon, Crocbug?</p>
+  			<h3>Published Zine Projects</h3>
+            <p>Kacchako-</p>
+    		<ul>
+              <li>All Roads Lead to You</li>
+  			  <li>Kacchako Advent 2023</li>
+			</ul>
+         
+			<h3>About me + Commission info-</h3>
+    		<p>Game dev by day, sweaty weeb by night. Professional work can be found here, I am most active on Twitter.</p>
 
-<p>Main ships: Kacchako, Aeon, Crocbug?</p>
-  <h3>Published Zine Projects
-Kacchako-</h3>
-    <p>All Roads Lead to You</p>
-
-  <p>Kacchako Advent 2023</p>
-
-<h3>About me + Commission info-</h3>
-    <p>Game dev by day, sweaty weeb by night. Professional work can be found here, I am most active on Twitter.</p>
-
-  <p>Commission Status: CLOSED</p>
-  </div>
+  			<h4>Commission Status: CLOSED</h4>
+        </div>
+ 	 </div>
+  </div>   
   <div class="main">
     <h2>TITLE HEADING</h2>
     <h5>Title description, Dec 7, 2017</h5>
@@ -188,7 +216,7 @@ Kacchako-</h3>
   </div>
 </div>
 <div align="center">
-	<h2>gallery</h2>
+	<h2><a name="gallery"></a>GALLERY</h2>
     <div class="fakeimg" style="height:200px;">Image</div><br>
     <div class="fakeimg" style="height:200px;">Image</div><br>
     <div class="fakeimg" style="height:200px;">Image</div><br>
