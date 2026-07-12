@@ -250,82 +250,6 @@ h2, h3, h4 {
 
 </style>
 
-<script>
- // Wrap everything in DOMContentLoaded to ensure DOM is ready
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize gallery filters
-    filterSelection("all");
-    
-    // Initialize tabs - click the first tab
-    const defaultOpen = document.getElementById("defaultOpen");
-    if (defaultOpen) {
-      openCity({ currentTarget: defaultOpen }, "MHA");
-    }
-    
-    // Add click handlers to filter buttons
-    const btnContainer = document.getElementById("myBtnContainer");
-    if (btnContainer) {
-      const btns = btnContainer.getElementsByClassName("btn");
-      for (let i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-          const current = document.getElementsByClassName("gg");
-          if (current.length > 0) {
-            current[0].className = current[0].className.replace(" gg", "");
-          }
-          this.className += " gg";
-        });
-      }
-    }
-  });
-
-  function filterSelection(c) {
-    const x = document.getElementsByClassName("filterDiv");
-    if (c == "all") c = "";
-    for (let i = 0; i < x.length; i++) {
-      w3RemoveClass(x[i], "show");
-      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-    }
-  }
-
-  function w3AddClass(element, name) {
-    let arr1 = element.className.split(" ");
-    const arr2 = name.split(" ");
-    for (let i = 0; i < arr2.length; i++) {
-      if (arr1.indexOf(arr2[i]) == -1) {
-        element.className += " " + arr2[i];
-      }
-    }
-  }
-
-  function w3RemoveClass(element, name) {
-    let arr1 = element.className.split(" ");
-    const arr2 = name.split(" ");
-    for (let i = 0; i < arr2.length; i++) {
-      while (arr1.indexOf(arr2[i]) > -1) {
-        arr1.splice(arr1.indexOf(arr2[i]), 1);
-      }
-    }
-    element.className = arr1.join(" ");
-  }
-
-  function openCity(evt, cityName) {
-    const tabcontent = document.getElementsByClassName("tabcontent");
-    for (let i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    const tablinks = document.getElementsByClassName("tablinks");
-    for (let i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    const element = document.getElementById(cityName);
-    if (element) {
-      element.style.display = "block";
-    }
-    if (evt.currentTarget) {
-      evt.currentTarget.className += " active";
-    }
-  }
-</script>
 
 </head>
 
@@ -392,19 +316,19 @@ h2, h3, h4 {
 
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'MHA')" id="defaultOpen">MHA</button>
-  <button class="tablinks" onclick="openCity(event, 'Resi')">Resident Evil</button>
+  <button class="tablinks" onclick="window.openCity, 'MHA')" id="defaultOpen">MHA</button>
+  <button class="tablinks" onclick="window.openCity(event, 'Resi')">Resident Evil</button>
   <button class="tablinks" onclick="openCity(event, 'misc')">Misc</button>
 </div>
 
 <div id="MHA" class="tabcontent">
   <h3>My Hero Acadmemia</h3>
   <div id="myBtnContainer" class="btnContainer container" style="justify-content: center;">
-  <div><button class="btn gg" onclick="filterSelection('all')">Show All</button></div>
-  <div><button class="btn" onclick="filterSelection('enviro')">temp</button></div>
-  <div><button class="btn" onclick="filterSelection('char')">temp</button></div>
-  <div><button class="btn" onclick="filterSelection('creature')">temp</button></div>
-  <div><button class="btn" onclick="filterSelection('visdev')">tempv</button></div>
+  <div><button class="btn gg" onclick="window.filterSelection('all')">Show All</button></div>
+  <div><button class="btn" onclick="window.filterSelection('enviro')">temp</button></div>
+  <div><button class="btn" onclick="window.filterSelection('char')">temp</button></div>
+  <div><button class="btn" onclick="window.filterSelection('creature')">temp</button></div>
+  <div><button class="btn" onclick="window.filterSelection('visdev')">tempv</button></div>
 </div>
      <div class="flex-container">
   		<div class="filterDiv creature">
@@ -454,6 +378,83 @@ h2, h3, h4 {
   <h3>Misc</h3>
   <p>Tokyo is the capital of Japan.</p>
 </div>
+
+<script>
+ // Wrap everything in DOMContentLoaded to ensure DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize gallery filters
+    filterSelection("all");
+    
+    // Initialize tabs - click the first tab
+    const defaultOpen = document.getElementById("defaultOpen");
+    if (defaultOpen) {
+      openCity({ currentTarget: defaultOpen }, "MHA");
+    }
+    
+    // Add click handlers to filter buttons
+    const btnContainer = document.getElementById("myBtnContainer");
+    if (btnContainer) {
+      const btns = btnContainer.getElementsByClassName("btn");
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+          const current = document.getElementsByClassName("gg");
+          if (current.length > 0) {
+            current[0].className = current[0].className.replace(" gg", "");
+          }
+          this.className += " gg";
+        });
+      }
+    }
+  });
+
+  function window.filterSelection(c) {
+    const x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    for (let i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+
+  function w3AddClass(element, name) {
+    let arr1 = element.className.split(" ");
+    const arr2 = name.split(" ");
+    for (let i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
+      }
+    }
+  }
+
+  function w3RemoveClass(element, name) {
+    let arr1 = element.className.split(" ");
+    const arr2 = name.split(" ");
+    for (let i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+
+  function window.openCity(evt, cityName) {
+    const tabcontent = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    const tablinks = document.getElementsByClassName("tablinks");
+    for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    const element = document.getElementById(cityName);
+    if (element) {
+      element.style.display = "block";
+    }
+    if (evt.currentTarget) {
+      evt.currentTarget.className += " active";
+    }
+  }
+</script>
 
 
 </div>
