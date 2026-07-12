@@ -406,7 +406,7 @@ h2, h3, h4 {
     }
   });
 
-  function window.filterSelection(c) {
+  function filterSelection(c) {
     const x = document.getElementsByClassName("filterDiv");
     if (c == "all") c = "";
     for (let i = 0; i < x.length; i++) {
@@ -436,7 +436,7 @@ h2, h3, h4 {
     element.className = arr1.join(" ");
   }
 
-  function window.openCity(evt, cityName) {
+  function openCity(evt, cityName) {
     const tabcontent = document.getElementsByClassName("tabcontent");
     for (let i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
