@@ -1,37 +1,18 @@
----
-import BaseHead from '../components/BaseHead.astro';
-
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<link rel="stylesheet" href="https://cindyliuconcepts.com/_astro/_slug_.fEoeRqC0.css">
 <style>
 * {
   box-sizing: border-box;
 }
 
 /* Header/logo Title */
-.header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 40px;
-  text-align: center;
-  background: #E98B77;
-   background: -moz-linear-gradient(top, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
-	background: -webkit-linear-gradient(top, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
-	background: linear-gradient(to bottom, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
-  color: white;
-  font-size: 12px;
-}
-
-/* Increase the font size of the heading */
-.header h1 {/* Header/logo Title */
 .header {
   display: flex;
   align-items: center;
