@@ -317,7 +317,7 @@ h2, h3, h4 {
 <div class="tab">
   <button class="tablinks" onclick="window.openCity(event, 'MHA')" id="defaultOpen">MHA</button>
   <button class="tablinks" onclick="window.openCity(event, 'Resi')">Resident Evil</button>
-  <button class="tablinks" onclick="window.openCity(event, 'misc')">Misc</button>
+  <button class="tablinks" onclick="openCity(event, 'misc')">Misc</button>
 </div>
 
 <div id="MHA" class="tabcontent">
@@ -379,37 +379,80 @@ h2, h3, h4 {
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Helper functions remain global if needed elsewhere
+ // Wrap everything in DOMContentLoaded to ensure DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize gallery filters
+    filterSelection("all");
+    
+    // Initialize tabs - click the first tab
+    const defaultOpen = document.getElementById("defaultOpen");
+    if (defaultOpen) {
+      openCity({ currentTarget: defaultOpen }, "MHA");
+    }
+    
+    // Add click handlers to filter buttons
+    const btnContainer = document.getElementById("myBtnContainer");
+    if (btnContainer) {
+      const btns = btnContainer.getElementsByClassName("btn");
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+          const current = document.getElementsByClassName("gg");
+          if (current.length > 0) {
+            current[0].className = current[0].className.replace(" gg", "");
+          }
+          this.className += " gg";
+        });
+      }
+    }
+  });
+
   function filterSelection(c) {
-    const items = document.getElementsByClassName("filterDiv");
-    if (c === "all") c = "";
-    for (let i = 0; i < items.length; i++) {
-      items[i].classList.remove("show");
-      // Use classList.contains when c is non-empty, otherwise show all
-      if (c === "" || items[i].className.split(/\s+/).indexOf(c) > -1) {
-        items[i].classList.add("show");
+    const x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    for (let i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+
+  function w3AddClass(element, name) {
+    let arr1 = element.className.split(" ");
+    const arr2 = name.split(" ");
+    for (let i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
       }
     }
   }
 
-  // Tab switcher
-  function openCityElement(btnEl, cityName) {
-    const tabcontent = document.getElementsByClassName("tabcontent");
-    for (let i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
-
-    const tablinks = document.getElementsByClassName("tablinks");
-    for (let i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
-
-    const element = document.getElementById(cityName);
-    if (element) element.style.display = "block";
-    if (btnEl) btnEl.classList.add("active");
+  function w3RemoveClass(element, name) {
+    let arr1 = element.className.split(" ");
+    const arr2 = name.split(" ");
+    for (let i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
   }
 
-  // Initialize gallery filters (show all)
-  filterSelection("all");
-
-  // Attach tab button handlers (
+  function openCity(evt, cityName) {
+    const tabcontent = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    const tablinks = document.getElementsByClassName("tablinks");
+    for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    const element = document.getElementById(cityName);
+    if (element) {
+      element.style.display = "block";
+    }
+    if (evt.currentTarget) {
+      evt.currentTarget.className += " active";
+    }
+  }
 </script>
 
 
