@@ -515,19 +515,19 @@ document.getElementById("defaultOpen").click();
 </script>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'MHA')" id="defaultOpen">MHA</button>
-  <button class="tablinks" onclick="openCity(event, 'Resi')">Resident Evil</button>
-  <button class="tablinks" onclick="openCity(event, 'misc')">Misc</button>
+  <button class="tablinks" onclick="window.openCity(event, 'MHA')" id="defaultOpen">MHA</button>
+  <button class="tablinks" onclick="window.openCity(event, 'Resi')">Resident Evil</button>
+  <button class="tablinks" onclick="window.openCity(event, 'misc')">Misc</button>
 </div>
 
 <div id="MHA" class="tabcontent">
   <div><h3>My Hero Acadmemia</h3>
   <div id="myBtnContainer" class="btnContainer container" style="justify-content: center;">
-  <div><button class="btn gg" onclick="filterSelection('all')">Show All</button></div>
-  <div><button class="btn" onclick="filterSelection('enviro')">temp</button></div>
-  <div><button class="btn" onclick="filterSelection('char')">temp</button></div>
-  <div><button class="btn" onclick="filterSelection('creature')">temp</button></div>
-  <div><button class="btn" onclick="filterSelection('visdev')">tempv</button></div>
+  <div><button class="btn gg" onclick="window.filterSelection('all')">Show All</button></div>
+  <div><button class="btn" onclick="window.filterSelection('enviro')">temp</button></div>
+  <div><button class="btn" onclick="window.filterSelection('char')">temp</button></div>
+  <div><button class="btn" onclick="window.filterSelection('creature')">temp</button></div>
+  <div><button class="btn" onclick="window.filterSelection('visdev')">tempv</button></div>
 </div>
      <div class="flex-container">
   		<div class="filterDiv creature">
