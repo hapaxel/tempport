@@ -53,7 +53,7 @@ p {
 /* Increase the font size of the heading */
 .hero-header h1 {
   font-size: clamp(3rem, 12cqi, 22rem);
-  color: #AF453C;
+  color: #BB161F;
   font-weight: 900;
   letter-spacing: -0.4cqi;
   line-height: 65%;
@@ -134,14 +134,14 @@ p {
 
 
 h2, h3, h4 {
-  color: #CF000A;
+  color: #AF453C;
 }
 
 
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
   overflow: hidden;
-  background-color: #AF453C;
+  background-color: #BB161F;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -175,10 +175,6 @@ h2, h3, h4 {
   
 }
 
-/* Active/current link */
-.navbar a.active {
-  border-bottom: 5px solid #CF000A;
-}
 
 /* Column container */
 .row {  
@@ -224,7 +220,7 @@ h2, h3, h4 {
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
   margin: .75em;
   padding: 2em;
   align-items: center;
@@ -296,7 +292,7 @@ h2, h3, h4 {
   margin: 0px 20px;
   transition: 0.2s;
   font-variant: small-caps;
-  font-size: clamp(1rem, 1.5cqi, 2rem);
+  font-size: clamp(1rem, 1.5cqi, 1.5rem);
   font-weight: 400;
   letter-spacing: 3px;
   text-transform: lowercase;
@@ -325,7 +321,7 @@ h2, h3, h4 {
 .footer {
   padding: 20px;
   text-align: center;
-  background: #1C140D;
+  background: #1D1D1D;
 }
 
 @media screen and (max-width: 1024px) {
