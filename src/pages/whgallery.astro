@@ -15,42 +15,137 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <style>
 * {
   box-sizing: border-box;
+  
 }
+
+  
+p {
+  white-space: pre-wrap;
+}  
+
 
 /* Header/logo Title */
 .header {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 40px;
-  text-align: center;
-  background: #E98B77;
-   background: -moz-linear-gradient(top, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
-	background: -webkit-linear-gradient(top, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
-	background: linear-gradient(to bottom, #E98B77 0%, #E98B77 75%, #FF9F88 100%);
-  color: white;
-  font-size: 12px;
+  flex-direction: column-reverse;
+  color: #173936;
+  background: #AF453C; 
+  min-height: 10cqi;
+  position: relative;
+  border-bottom: 35px solid #1d1d1d;
+}
+
+.hero-header {
+  display: flex;
+  flex-direction: column-reverse;
+  color: #F2DBC6;
+  background-image: linear-gradient(rgba(23, 57, 54, .9), rgba(23, 57, 54, .8), rgba(29, 29, 29, 1)), url("https://www.cindyliuconcepts.com/fan/mha/Fxa4jrSaIAAfxRB.jpg");
+  height: 50cqi;
+  background-repeat: no-repeat;
+  background-size: 125%;
+  background-position-x: 9%;
+  background-position-y: 30%; 
+  background-blend-mode: darken;
+  position: relative;
+
 }
 
 /* Increase the font size of the heading */
-.header h1 {
-  font-size: 40px;
-  color: white;
-  text-shadow: 3px 3px 0px #00b685, 5px 5px 0px #00b685;
-  margin: 30px;
+.hero-header h1 {
+  font-size: clamp(3rem, 12cqi, 22rem);
+  color: #AF453C;
+  font-weight: 900;
+  letter-spacing: -0.4cqi;
+  line-height: 65%;
+  position: absolute;
+  bottom:-5px;
+
 }
 
-h2, h3, h4 {
-  color: #00b685;
+.header h1 {
+  font-size: clamp(1rem, 8cqi, 10rem);
+  color: #1d1d1d;
+  font-weight: 900;
+  letter-spacing: -0.4cqi;
+  line-height: 65%;
+  position: absolute;
+  bottom:-5px;
+
 }
+
+.header .blurb, .hero-header .blurb {
+  max-width: 60%;
+  text-align: right;
+  font-size: 3.5cqi;
+  font-weight: 200;
+  line-height: 1cqi;
+  position: absolute;
+  right: 30px;
+  top: 40px;
+ }
+ 
+ 
+ @media screen and (max-width: 700px) {
+ 
+ .header {
+  min-height: 13cqi;
+  }
+ 
+.header h1, .hero-header h1 {
+  bottom: -5px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+
+.header {
+  padding: 1em;
+  min-height: auto;
+  align-items: center;
+   justify-content: center;
+  flex-direction: column-reverse;
+  }
+
+.hero-header {
+ background-size: 150%;
+ min-height: 250;
+  align-items: center;
+   justify-content: center;
+  flex-direction: column-reverse;
+ }
+
+
+.header h1, .hero-header h1 {
+  bottom: -7px;
+  font-size: 13cqi;
+}
+.header .blurb, .hero-header .blurb {
+  text-align: center;
+  font-size: .75em;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+}
+
+}
+
+
+
+h2, h3, h4 {
+  color: #D26052;
+}
+
 
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
   overflow: hidden;
-  background-color: #E98B77;
+  background-color: #AF453C;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
+  padding-top: 10px;
   z-index: 1;
 }
 
@@ -58,10 +153,13 @@ h2, h3, h4 {
 .navbar a {
   float: left;
   display: block;
-  color: white;
+  color: #F2DBC6;
   text-align: center;
-  padding: 14px 20px;
+  padding: 5px 20px;
   text-decoration: none;
+  font-variant: small-caps;
+  font-size: 1.3rem;
+  font-weight: 350;
 }
 
 
@@ -72,22 +170,24 @@ h2, h3, h4 {
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: white;
-  color: #e98b77;
+  border-bottom: 5px solid #FED801;
+  
 }
 
 /* Active/current link */
 .navbar a.active {
-  background-color: #534a4a;
-  color: white;
+  border-bottom: 5px solid #CF000A;
 }
 
 /* Column container */
 .row {  
-  display: -ms-flexbox; /* IE10 */
   display: flex;
-  -ms-flex-wrap: nowrap; /* IE10 */
+  flex-direction: row;
   flex-wrap: nowrap;
+  background: #1d1d1d;
+  color: #F2DBC6;
+  padding: 2em 3em 0 3em;
+  width: 100%;
 }
 
 /* Create two unequal columns that sits next to each other */
@@ -95,16 +195,18 @@ h2, h3, h4 {
 .side {
   -ms-flex: 25%; /* IE10 */
   flex: 25%;
-  background-color: white;
+  
   padding: 20px;
+   
 }
 
 /* Main column */
 .main {   
   -ms-flex: 75%; /* IE10 */
   flex: 75%;
-  background-color: white;
+  
   padding: 20px;
+   
 }
 
 /* Fake image, just for this example */
@@ -117,29 +219,33 @@ h2, h3, h4 {
 
 .card {
   position: relative;
-  background-color: white;
+  background-color: #180E0F;
   border-radius: 0.25rem;
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  margin: .75em;
+  padding: 2em;
+  align-items: center;
+  width: 100%;
   }
   
   .card_content {
-  padding: 2rem;
   font-size: 13px;
+  margin-left: 1em;
   
   }
 
   .card_content h4 {
-  margin-left: -1rem;
   padding-top: .5rem;
+  margin-left: -1em;
   
   }
 
   .card_image {
-  max-height: 250px; 
-  align-self: center;
+  max-height: 300px; 
+  
+ 
   }
   
   
@@ -147,6 +253,11 @@ h2, h3, h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.flex-container div{
+	margin: .75em;
+      padding: 1em;
 }
 
 .filterDiv {
@@ -168,7 +279,7 @@ h2, h3, h4 {
 /* Style the tab */
 .tab {
   overflow: hidden;
-  background-color: #E98B77;
+  background-color: #AF453C;
   color: white;
 }
 
@@ -207,7 +318,7 @@ h2, h3, h4 {
 .footer {
   padding: 20px;
   text-align: center;
-  background: #ddd;
+  background: #1C140D;
 }
 
 @media screen and (max-width: 1024px) {
@@ -250,16 +361,68 @@ h2, h3, h4 {
 
 </style>
 
+<script>
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("gg");
+    current[0].className = current[0].className.replace(" gg", "");
+    this.className += " gg";
+  });
+}
+</script>
 
 </head>
 
 <body>
 
-<div class="header">
-  <h1>WHISKEYTEETH</h1>
-  <div style="max-width: 500px;"><p>A <b>pseudonym</b> for my fan works. I was from the batch of artist that was told fanart and anime style works are bad. I ran into burnout and so far this kind of silly work was what I need to enjoy drawing again.</p>
-  <p>Draw what makes you happy. 🖤</p>
+<div class="hero-header">
+    <h1>WHISKEYTEETH</h1>
+  <div class="blurb">
+  <p style="font-variant: small-caps;">a collection of</P>
+  <p style="font-weight: 900;">FANWORKS同人</P>
   </div>
+
 </div>
 
 <div class="navbar">
@@ -270,13 +433,33 @@ h2, h3, h4 {
   <a href="#" class="right">x</a>
   <a href="#" class="right">x</a>
 </div>
-
+<div class="row"> 
+  <div class="card">
+  	<div class="card_content">
+    <h2>ANNOUNCEMENTS</h2>
+    <h5>Title description, Dec 7, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card_content"><h2>LATEST ART</h2>
+    <h5>Title description, Sep 2, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+ </div>
+</div>
 <div class="row">
-  <div class="side">
-  	<div class="card">
-        <div class="card_image"><img src="https://cindyliuconcepts.com/bio.png" style="border-radius: 50%"></div>
-        <div class="card_content">
-        	<h4>About me</h4>
+  <div class="card">
+  		
+        <div class="flex-container card_content">
+        <div style="align-self:center;"><img src="https://cindyliuconcepts.com/bio.png" style="border-radius: 50%">
+  </div>
+        	<div><h4>About me</h4>
     		<p>Game dev by day, sweaty weeb by night. Professional work can be found here, I am most active on Twitter.</p>
             <h4>Current Fandoms and Ships</h4>
    			<p>MHA, One Piece, Golden Kamuy, Yakuza, Resident Evil</p>
@@ -288,46 +471,63 @@ h2, h3, h4 {
               <li>All Roads Lead to You</li>
   			  <li>Kacchako Advent 2023</li>
 			</ul>
-			<p></p>
-  			<h4>Commission Status: CLOSED</h4>
+            </div>
+           </div>
+		</div>
+     </div>
+<div class="row">
+      <div class="card">  
+  			<h2>Commission Status: CLOSED</h2>
+            </div>
         </div>
- 	 </div>
-  </div>   
-  <div class="main">
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  </div>
+       </div>
+     </div>
 </div>
 
 
-<div align="center"><a name="gallery"></a>
+
 <div class="header">
+<a name="gallery"></a>
 	<h1>GALLERY</h1>
 </div>    
+<div class="row" align="center">
+<div>
+<script>
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+</script>
 
 <div class="tab">
-  <button class="tablinks" onclick="window.openCity(event, 'MHA')" id="defaultOpen">MHA</button>
-  <button class="tablinks" onclick="window.openCity(event, 'Resi')">Resident Evil</button>
+  <button class="tablinks" onclick="openCity(event, 'MHA')" id="defaultOpen">MHA</button>
+  <button class="tablinks" onclick="openCity(event, 'Resi')">Resident Evil</button>
   <button class="tablinks" onclick="openCity(event, 'misc')">Misc</button>
 </div>
 
 <div id="MHA" class="tabcontent">
-  <h3>My Hero Acadmemia</h3>
+  <div><h3>My Hero Acadmemia</h3>
   <div id="myBtnContainer" class="btnContainer container" style="justify-content: center;">
-  <div><button class="btn gg" onclick="window.filterSelection('all')">Show All</button></div>
-  <div><button class="btn" onclick="window.filterSelection('enviro')">temp</button></div>
-  <div><button class="btn" onclick="window.filterSelection('char')">temp</button></div>
-  <div><button class="btn" onclick="window.filterSelection('creature')">temp</button></div>
-  <div><button class="btn" onclick="window.filterSelection('visdev')">tempv</button></div>
+  <div><button class="btn gg" onclick="filterSelection('all')">Show All</button></div>
+  <div><button class="btn" onclick="filterSelection('enviro')">temp</button></div>
+  <div><button class="btn" onclick="filterSelection('char')">temp</button></div>
+  <div><button class="btn" onclick="filterSelection('creature')">temp</button></div>
+  <div><button class="btn" onclick="filterSelection('visdev')">tempv</button></div>
 </div>
      <div class="flex-container">
   		<div class="filterDiv creature">
@@ -367,98 +567,30 @@ h2, h3, h4 {
   </div>
 </div>
 </div>
+</div>
 
 <div id="Resi" class="tabcontent">
-  <h3>Resident Evil</h3>
+  <div class="row"><h3>Resident Evil</h3>
   <p>Paris is the capital of France.</p> 
-</div>
+</div></div>
 
 <div id="misc" class="tabcontent">
   <h3>Misc</h3>
   <p>Tokyo is the capital of Japan.</p>
 </div>
-
-<script is:inline>
- // Wrap everything in DOMContentLoaded to ensure DOM is ready
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize gallery filters
-    filterSelection("all");
-    
-    // Initialize tabs - click the first tab
-    const defaultOpen = document.getElementById("defaultOpen");
-    if (defaultOpen) {
-      openCity({ currentTarget: defaultOpen }, "MHA");
-    }
-    
-    // Add click handlers to filter buttons
-    const btnContainer = document.getElementById("myBtnContainer");
-    if (btnContainer) {
-      const btns = btnContainer.getElementsByClassName("btn");
-      for (let i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-          const current = document.getElementsByClassName("gg");
-          if (current.length > 0) {
-            current[0].className = current[0].className.replace(" gg", "");
-          }
-          this.className += " gg";
-        });
-      }
-    }
-  });
-
-  function filterSelection(c) {
-    const x = document.getElementsByClassName("filterDiv");
-    if (c == "all") c = "";
-    for (let i = 0; i < x.length; i++) {
-      w3RemoveClass(x[i], "show");
-      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-    }
-  }
-
-  function w3AddClass(element, name) {
-    let arr1 = element.className.split(" ");
-    const arr2 = name.split(" ");
-    for (let i = 0; i < arr2.length; i++) {
-      if (arr1.indexOf(arr2[i]) == -1) {
-        element.className += " " + arr2[i];
-      }
-    }
-  }
-
-  function w3RemoveClass(element, name) {
-    let arr1 = element.className.split(" ");
-    const arr2 = name.split(" ");
-    for (let i = 0; i < arr2.length; i++) {
-      while (arr1.indexOf(arr2[i]) > -1) {
-        arr1.splice(arr1.indexOf(arr2[i]), 1);
-      }
-    }
-    element.className = arr1.join(" ");
-  }
-
-  function openCity(evt, cityName) {
-    const tabcontent = document.getElementsByClassName("tabcontent");
-    for (let i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    const tablinks = document.getElementsByClassName("tablinks");
-    for (let i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    const element = document.getElementById(cityName);
-    if (element) {
-      element.style.display = "block";
-    }
-    if (evt.currentTarget) {
-      evt.currentTarget.className += " active";
-    }
-  }
-</script>
-
+</div>
 
 </div>
+<div class="row">
 <div style="width: 100%; height: 200px;">
 <p align="center"><a href="#gallery">back to top</a></p></div>
+</div>
+</div>
+
+<div class="header">
+	<h1>SHOP</h1>
+</div> 
+
 <div class="footer" style="height: 400px;">
   <h2>Footer</h2>
 </div>
