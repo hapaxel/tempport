@@ -16,14 +16,40 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 * {
   box-sizing: border-box; 
 }
+  
 .p {
   white-space: pre-wrap;
-}  
+}
 
 a[name] {
 	color: transparent;
     transform: translateY(-9cqi);
 }
+
+#top {
+  text-decoration: none;
+  padding-top: 0px;
+  border-top: 2px solid #FED801;
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+}
+
+#top:hover {
+  color: #1d1d1d;
+  border-top: 2px solid #1d1d1d;
+  background-color: #FED801;
+}
+
+a {
+  color: #FED801;
+}
+
+a:hover {
+  color: #BB161F;
+}
+
 
 
 /* Header/logo Title */
@@ -31,10 +57,10 @@ a[name] {
   display: flex;
   flex-direction: column-reverse;
   color: #173936;
-  background: #328078; 
-  min-height: 10cqi;
+  background: #1E534F; 
+  min-height: 15cqi;
   position: relative;
-  border-bottom: 35px solid #1d1d1d;
+  border-bottom: 50px solid #1d1d1d;
 }
 
 .hero-header {
@@ -133,6 +159,7 @@ a[name] {
 
 }
 
+
 h2, h3, h4 {
   color: #AF453C;
 }
@@ -161,6 +188,7 @@ h2, h3, h4 {
   font-size: 1.3rem;
   font-weight: 350;
   border-bottom: 5px solid transparent;
+  transition: 0.2s;
 }
 
 
@@ -172,7 +200,6 @@ h2, h3, h4 {
 /* Change color on hover */
 .navbar a:hover {
   border-bottom: 5px solid #FED801;
-  
 }
 
 
@@ -183,7 +210,7 @@ h2, h3, h4 {
   flex-wrap: nowrap;
   background: #1d1d1d;
   color: #F2DBC6;
-  padding: 2em 3em 0 3em;
+  padding: 0 10cqi 0 10cqi;
   width: 100%;
 }
 
@@ -222,7 +249,7 @@ h2, h3, h4 {
   flex-direction: column;
   overflow: auto;
   margin: .75em;
-  padding: 2em;
+  padding: 2em 1em 2em 1em;
   align-items: center;
   width: 100%;
   }
@@ -284,7 +311,7 @@ h2, h3, h4 {
 
 /* Style the buttons inside the tab */
 .tab button {
-   float: center;
+  float: center;
   border: 1px solid transparent;
   border-bottom: 5px solid transparent;
   outline: none;
@@ -321,6 +348,31 @@ h2, h3, h4 {
   text-align: center;
 }
 
+.container div {
+   margin: 15px 0px;
+   padding: 0px;
+   text-align: center;
+ }
+
+button.btn {
+  padding: 8px 30px;
+  justify-self: center;
+  margin: 0px;
+  color: #F2DBC6;
+  background-color: transparent;
+  border-bottom: 3px solid #1D1D1D;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  transition: 0.25s;
+}
+
+button.btn:hover {
+  background-color: transparent;
+  color: #F2DBC6;
+  border-bottom: 3px solid #FED801;
+}
 
 /* Footer */
 .footer {
@@ -436,7 +488,7 @@ for (var i = 0; i < btns.length; i++) {
   <a href="#news">news</a>
   <a href="#gallery">gallery</a>
   <a href="#shop">shop</a>
-  <a href="#">links</a>
+  <a href="#links">links</a>
   <a href="#" class="right">x</a>
   <a href="#" class="right">x</a>
 </div>
@@ -587,7 +639,7 @@ for (var i = 0; i < btns.length; i++) {
   		<button class="tablinks" onclick="window.openCity(event, 'misc')">Misc</button>
 	</div>
 
-	<div class="card" style="border-top: 5px solid #FED801; margin: 0px;">
+	<div class="card" style="border-top: 5px solid #FED801; margin: 0px 0px 15px 0px;">
 		<div id="MHA" class="tabcontent">
   			<div><h3>My Hero Acadmemia</h3></div>
   			<div id="myBtnContainer" class="btnContainer container" style="justify-content: center;">
@@ -651,12 +703,18 @@ for (var i = 0; i < btns.length; i++) {
 </div>
 <div class="row">
 <div style="width: 100%; height: 200px;">
-<p align="center"><a href="#gallery">back to top</a></p></div>
+<p align="center"><a id="top" href="#gallery">choose another fandom</a></p></div>
 </div>
 </div>
 
 <div class="header">
+<a name="shop">.</a>
 	<h1>SHOP</h1>
+</div> 
+
+<div class="header">
+<a name="links">.</a>
+	<h1>LINKS</h1>
 </div> 
 
 <div class="footer" style="height: 400px;">
