@@ -182,10 +182,6 @@ h2, h3, h4 {
   color: #AF453C;
 }
 
-.div 200 {
-  width: 100%;
-  height: 200x;
-}
 
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
@@ -310,7 +306,15 @@ h2, h3, h4 {
   flex-grow: 1;
   display: none; /* Hidden by default */
 }
-  
+
+.filterDiv a{
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.filterDiv a:hover {
+	opacity: 1;
+}
   
 .filterDiv:last-child {
   flex-grow: 10;
