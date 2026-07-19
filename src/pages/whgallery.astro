@@ -143,36 +143,39 @@ a:hover {
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
 
 .header {
   padding: 1em;
   min-height: auto;
   align-items: center;
-   justify-content: center;
+  justify-content: center;
   flex-direction: column-reverse;
   }
 
 .hero-header {
  background-size: 150%;
- min-height: 250;
-  align-items: center;
-   justify-content: center;
+ min-height: 700px;
+ align-items: center;
+ justify-content: center;
   flex-direction: column-reverse;
  }
 
 
 .header h1, .hero-header h1 {
-  bottom: -7px;
-  font-size: 13cqi;
+  bottom: -3px;
+  font-size: 17cqi;
+  width:80%;
+  word-wrap: wrap;
+  align-self: start;
 }
 .header .blurb, .hero-header .blurb {
   text-align: center;
-  font-size: .75em;
+  font-size: 7cqi;
   left: auto;
   right: auto;
   top: auto;
-  bottom: auto;
+  bottom: 35%;
 }
 
 }
