@@ -274,20 +274,27 @@ h2, h3, h4 {
   
   .card_content {
   font-size: 13px;
-  margin-left: 1em;
+  width: 100%;
+  padding-left: 1em;
   
   }
 
-  .card_content h4 {
-  padding-top: .5rem;
-  margin-left: -1em;
+  .card_content h2, h4 {
+   letter-spacing: .1em;
+   margin-left: -.5em;
+  }
   
+   .card_content h5 {
+  padding-bottom: 1em;
+  margin-left: -.5em;
+  font-weight: 200;
+  letter-spacing: .2em;
   }
 
   .card_image {
-  max-height: 300px; 
-  
- 
+  max-height: 200px; 
+  width: 100%;
+  margin-bottom: 1em;
   }
   
   
@@ -536,19 +543,21 @@ for (var i = 0; i < btns.length; i++) {
 <div class="row"> 
   <div class="card">
   	<div class="card_content">
-    <h2>ANNOUNCEMENTS</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    	<h2>ANNOUNCEMENTS</h2>
+    	<h5>xx/xx/xxxx - Site launched!</h5>
+    
+	    <p>Been a while since I've built a site from scratch, so much new stuff that css can do. I may write a blog post how I made this as none webdev person. </p>
+    	<p>Gotta make a blog first...</p>
     </div>
   </div>
+  
   <div class="card">
-    <div class="card_content"><h2>LATEST ART</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <div class="card_content">
+    	<h2>LATEST ART</h2>
+    	<h5>xx/xx/xxxx</h5>
+    		
+    	<p>Some text..</p>
+    	<p>wizaaards</p>
     </div>
   </div>
  </div>
