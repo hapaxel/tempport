@@ -131,58 +131,74 @@ a:hover {
  }
  
  
- @media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
  
- .header {
-  min-height: 13cqi;
-  }
- 
-.header h1, .hero-header h1 {
-  bottom: -5px;
-  }
+	     .header {
+	      min-height: 13cqi;
+	      }
+	
+	    .header h1, .hero-header h1 {
+	      bottom: -5px;
+	      }
 }
 
 
 @media screen and (max-width: 480px) {
 
-.header {
-  padding: 1em;
-  min-height: auto;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column-reverse;
-  }
+	    .header {
+	      display: flex;
+	      padding: 0;
+	      min-height: 90px;
+	      position: relative;
+	      border-bottom: 30px solid #1d1d1d;
+	
+	      }
+	
+	    .hero-header {
+	     background-size: 150%;
+	     min-height: 700px;
+	     align-items: center;
+	     justify-content: center;
+	      flex-direction: column-reverse;
+	     }
+	
+	
+	    .header h1 {
+	
+	      font-size: 13cqi;
+	    }
+	
+	     .hero-header h1 {
+	      bottom: -3px;
+	      font-size: 17cqi;
+	      width:80%;
+	      word-wrap: nowrap;
+	      align-self: start;
+	    }
+	
+	    .header .blurb, .hero-header .blurb {
+	      text-align: center;
+	      font-size: 7cqi;
+	      left: auto;
+	      right: auto;
+	      top: auto;
+	      bottom: 35%;
+	    }
+	    
+	    #end {
+		margin-bottom: 60px;
+	    }
 
-.hero-header {
- background-size: 150%;
- min-height: 700px;
- align-items: center;
- justify-content: center;
-  flex-direction: column-reverse;
- }
-
-
-.header h1, .hero-header h1 {
-  bottom: -3px;
-  font-size: 17cqi;
-  width:80%;
-  word-wrap: wrap;
-  align-self: start;
 }
-.header .blurb, .hero-header .blurb {
-  text-align: center;
-  font-size: 7cqi;
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: 35%;
-}
 
-}
 
 
 h2, h3, h4 {
   color: #AF453C;
+}
+
+h5 {
+  color: #FED801;
 }
 
 
@@ -235,32 +251,6 @@ h2, h3, h4 {
   width: 100%;
 }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  
-  padding: 20px;
-   
-}
-
-/* Main column */
-.main {   
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-  
-  padding: 20px;
-   
-}
-
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
 
 .card {
   position: relative;
@@ -299,8 +289,58 @@ h2, h3, h4 {
   width: 100%;
   margin-bottom: 1em;
   }
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+		  
+		.row {   
+		    flex-direction: column;
+		    padding: 0 10px;
+		  }
+		  
+		  .navbar {
+		  padding-top: 2px;
+		
+		}
+		  
+		   .navbar a {
+		    float: center;
+		  display: flex;
+		  text-align: center;
+		  padding: .25em .5em;  
+		  font-size: 1.3rem;
+		  font-weight: 350;
+		  }  
+		  
+		  .card {
+		  margin: .5em;
+		  padding: 2em 1em 2em 1em;
+		  align-items: center;
+		  width: auto;
+		  }
+		  
+		  .card_content {
+		  font-size: 13px;
+		  width: 100%;
+		  padding-left: 1em;
+		  
+		  }
   
-  
+}
+
+
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+		  .navbar a {
+		    float: none;
+		    width: 100%;
+		  }  
+}
+
+
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -418,6 +458,75 @@ button.btn:hover {
   border-bottom: 3px solid #FED801;
 }
 
+@media screen and (max-width: 480px) {
+
+    
+		    .tab {
+		      overflow: auto;
+		      margin: auto;
+		      
+		    }
+		
+		    /* Style the buttons inside the tab */
+		    .tab button {
+		
+		      padding: 5px 20px 3px;
+		      margin: 0px 5px;
+		    }
+		
+		
+		    /* Style the tab content */
+		    .tabcontent {
+		      padding: 0;
+		      border-top: none;
+		      text-align: center;
+		      font-size: 15px;
+		    }
+		    
+		     .btnContainer {
+		      margin: 15px 0;
+		      justify-items: space-around; 
+		    }
+		    
+		    
+		    .btnContainer div {
+		      margin: 5px 0;
+		    }
+		    
+		    button.btn {
+		      background-color: #1D1D1D;
+		      padding: 3px 8px;
+		      margin: 0 5px;
+		      font-size: 18px;
+		      font-weight: 300;
+		      letter-spacing: 1px;
+		
+		    }
+		    
+		    button.btn:hover {
+		      background-color: #FED801;
+		      color: #1D1D1D;
+		    }
+		    
+		     button.btn.active {
+		      background-color: #FED801;
+		      color: #1D1D1D;
+		    }
+		
+		    .filterDiv {
+		      height: auto;
+		      width: 100%;
+		    }
+		    
+		    .filterDiv a{
+		      opacity: 1;
+		      transition: 0;
+		    }
+
+ 
+
+}
+
 /* Footer */
 .footer {
   padding: 20px;
@@ -425,42 +534,7 @@ button.btn:hover {
   background: #1D1D1D;
 }
 
-@media screen and (max-width: 1024px) {
-  .side {
-     -ms-flex: 40%; /* IE10 */
-    flex: 40%;
-    }
-  .main {   
-    -ms-flex: 60%; /* IE10 */
-    flex: 60%;
-    }
-}
 
-@media screen and (max-width: 1440px) {
-  .side {
-     -ms-flex: 30%; /* IE10 */
-    flex: 30%;
-    }
-  .main {   
-    -ms-flex: 70%; /* IE10 */
-    flex: 70%;
-    }
-}
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }  
-}
   
 
 </style>
